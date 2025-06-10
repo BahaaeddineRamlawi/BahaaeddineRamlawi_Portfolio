@@ -1,0 +1,284 @@
+:root {
+  --primary-color: #1db954;
+  --secondary-color: #191414;
+  --light-color: #f8f8f8;
+  --dark-color: #191414;
+  --accent-color: #1ed760;
+  --text-color: #333;
+  --text-light: #6b6b6b;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  padding: 40px 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-color);
+}
+
+/* Section Styles */
+section {
+  margin-bottom: 40px;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Social Links */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: var(--light-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.social-link i {
+  margin-right: 12px;
+  font-size: 1.3rem;
+}
+
+/* Research Card Styles */
+.research-card {
+  padding: 25px;
+  border-left: 4px solid var(--primary-color);
+  background-color: var(--light-color);
+  border-radius: 0 8px 8px 0;
+}
+
+.research-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px 0;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.research-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.research-abstract {
+  margin: 20px 0;
+  color: var(--text-color);
+  line-height: 1.7;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.research-technologies {
+  margin: 20px 0;
+}
+
+.tech-list {
+  list-style: none;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.tech-list li {
+  padding: 8px 12px;
+  background-color: rgba(29, 185, 84, 0.1);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.research-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+  font-weight: 500;
+  border: 2px solid transparent;
+}
+
+.read-more.secondary-link {
+  background-color: var(--secondary-color);
+}
+
+.read-more.secondary-link:hover {
+  background-color: white;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.read-more:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  border-top: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tech-list {
+    grid-template-columns: 1fr;
+  }
+
+  .research-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .research-links {
+    flex-direction: column;
+  }
+
+  .read-more {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 30px 0;
+  }
+
+  section {
+    padding: 18px;
+  }
+
+  .social-link {
+    padding: 12px 15px;
+  }
+}
