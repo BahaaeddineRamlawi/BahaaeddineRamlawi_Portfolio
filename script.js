@@ -1,7 +1,5 @@
-// Update copyright year automatically
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -131,7 +129,6 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
-// Add animation to elements when they come into view
 const animateOnScroll = () => {
   const elements = document.querySelectorAll(
     "section, .social-link, .article-card"
@@ -148,7 +145,6 @@ const animateOnScroll = () => {
   });
 };
 
-// Set initial state for animation
 window.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(
     "section, .social-link, .article-card"
@@ -159,7 +155,6 @@ window.addEventListener("DOMContentLoaded", () => {
     element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
   });
 
-  // Trigger animation after a short delay
   setTimeout(() => {
     animateOnScroll();
   }, 100);
