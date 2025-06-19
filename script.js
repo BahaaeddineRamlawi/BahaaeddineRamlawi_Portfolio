@@ -91,6 +91,17 @@ const certificatesByOrg = {
 const toggleBtn = document.getElementById("toggleCertificatesBtn");
 const certificatesList = document.getElementById("certificatesList");
 
+function copyPhoneNumber() {
+  const phoneNumber = "+96178817895";
+  navigator.clipboard.writeText(phoneNumber).then(() => {
+    const copyBtn = document.querySelector(".copy-btn");
+    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    setTimeout(() => {
+      copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy Number';
+    }, 2000);
+  });
+}
+
 function renderCertificates() {
   certificatesList.innerHTML = "";
 
