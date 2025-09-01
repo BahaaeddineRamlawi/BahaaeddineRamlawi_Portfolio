@@ -86,6 +86,12 @@ const certificatesByOrg = {
       url: "assets/certificates/ieee_web_development_2023.png",
     },
   ],
+  Amigoscode: [
+    {
+      name: "Spring Boot For Beginners",
+      url: "assets/certificates/amigoscode_spring_boot_for_beginners.png",
+    },
+  ],
 };
 
 const toggleBtn = document.getElementById("toggleCertificatesBtn");
