@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bahaaeddine Ramlawi | Software Engineer Portfolio</title>
+    <title>Bahaaeddine Ramlawi | Software Engineer – AI Agents, Web &amp; Mobile</title>
     <meta
       name="description"
-      content="Official portfolio of Bahaaeddine Ramlawi – a software engineer specializing in web development, AI, and computer vision."
+      content="Official portfolio of Bahaaeddine Ramlawi – a software engineer building AI agents and web and mobile applications."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Bahaaeddine Ramlawi" />
 
     <meta
       property="og:title"
-      content="Bahaaeddine Ramlawi | Software Engineer Portfolio"
+      content="Bahaaeddine Ramlawi | Software Engineer – AI Agents, Web &amp; Mobile"
     />
     <meta
       property="og:description"
@@ -28,7 +28,7 @@
       content="https://bahaaeddineramlawiportfolio.vercel.app/"
     />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=7" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -45,27 +45,7 @@
             class="profile-img"
           />
           <h1>Bahaaeddine Ramlawi</h1>
-          <p>Software Engineer</p>
-        </div>
-      </header>
-
-      <main>
-        <section class="about">
-          <h2>About Me</h2>
-          <p>
-            I'm a dedicated and curious individual with a strong foundation in
-            engineering and technology. I enjoy exploring new ideas, solving
-            complex problems, and creating solutions that make a real impact. I
-            have experience working with computer vision, web development with a
-            focus on design, as well as artificial intelligence, including large
-            language models, natural language processing, and machine learning.
-            Whether working independently or as part of a team, I strive to grow
-            continuously, adapt to challenges, and contribute meaningfully to
-            the world around me.
-          </p>
-        </section>
-
-        <section class="cv-download">
+          <p>Software Engineer | AI Agents, Web &amp; Mobile Development</p>
           <a
             href="assets/Bahaaeddine Ramlawi CV.pdf"
             download="BahaaeddineRamlawi_CV.pdf"
@@ -73,9 +53,75 @@
           >
             <i class="fas fa-download"></i> Download My CV
           </a>
-          <p class="cv-note">
-            View my professional experience and qualifications
+        </div>
+      </header>
+
+      <main>
+        <section class="about">
+          <h2>About Me</h2>
+          <p>
+            I'm a software engineer building AI agents and web and mobile
+            applications. I work across the full stack, from designing
+            user-friendly interfaces to integrating large language models into
+            real products. My background includes computer vision, natural
+            language processing, and machine learning, and I've published
+            research on AI-powered attendance systems. I enjoy turning complex
+            problems into reliable, practical solutions, whether working
+            independently or as part of a team.
           </p>
+        </section>
+
+        <section class="experience">
+          <h2>Experience</h2>
+          <div class="experience-item">
+            <div class="experience-header">
+              <h3>Full-Stack Software Developer</h3>
+              <span class="experience-date">July 2025 – Present</span>
+            </div>
+            <p class="experience-company">Slashh</p>
+            <p>
+              Built and deployed Refleya, a cross-platform AI wellness app with
+              CBT-style chatbots, journaling, and mood tracking, using Next.js,
+              React Native, and FastAPI. Integrated voice transcription,
+              personalization, and real-time analytics.
+            </p>
+          </div>
+          <div class="experience-item">
+            <div class="experience-header">
+              <h3>Intern</h3>
+              <span class="experience-date">August 2024</span>
+            </div>
+            <p class="experience-company">USJ-ESIB, CIMTI</p>
+            <p>
+              Developed a machine learning model using satellite and historical
+              data to monitor and predict snow cover in Lebanon's mountains.
+            </p>
+          </div>
+          <div class="experience-item">
+            <div class="experience-header">
+              <h3>Intern</h3>
+              <span class="experience-date">June – July 2024</span>
+            </div>
+            <p class="experience-company">
+              Hôtel Dieu de France University Medical Center
+            </p>
+            <p>
+              Built an AI-based recommendation system using NLP to extract
+              insights from colonoscopy reports, and developed a mobile app to
+              assess prep readiness through image-based ML analysis.
+            </p>
+          </div>
+          <div class="experience-item">
+            <div class="experience-header">
+              <h3>Web Development Intern</h3>
+              <span class="experience-date">June – August 2023</span>
+            </div>
+            <p class="experience-company">Laptop Saida</p>
+            <p>
+              Built responsive websites with HTML, CSS, JavaScript, and PHP,
+              collaborating on feature design and performance optimization.
+            </p>
+          </div>
         </section>
 
         <section class="social-links">
@@ -103,7 +149,7 @@
           </div>
         </section>
 
-        <section class="contact-number">
+        <section class="contact-number" id="contact-number" hidden>
           <h2>Direct Contact</h2>
           <div class="phone-card">
             <div class="phone-icon">
@@ -123,14 +169,8 @@
 
         <section class="certificates">
           <h2>My Certificates</h2>
-          <button id="toggleCertificatesBtn" class="cv-button">
-            Show My Certificates
-          </button>
-          <ul
-            id="certificatesList"
-            class="certificates-list"
-            style="display: none"
-          ></ul>
+          <div id="certificatesGrid" class="cert-grid"></div>
+          <button id="toggleCertificatesBtn" class="btn-outline"></button>
         </section>
 
         <section class="research">
@@ -211,6 +251,6 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
   </body>
 </html>

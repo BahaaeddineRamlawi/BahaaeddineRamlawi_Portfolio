@@ -94,8 +94,23 @@ const certificatesByOrg = {
   ],
 };
 
+const certificatesGrid = document.getElementById("certificatesGrid");
 const toggleBtn = document.getElementById("toggleCertificatesBtn");
-const certificatesList = document.getElementById("certificatesList");
+const INITIAL_CERTIFICATES = 6;
+
+// Shown first, in this order; the rest follow in their original order.
+const featuredCertificates = [
+  "Generative AI for Beginners",
+  "Machine Learning Algorithms",
+  "Spring Boot For Beginners",
+  "JavaScript Algorithms and Data Structures",
+  "WEB DEVELOPMENT IEEE COURSE 2023",
+  "CCNA - Introduction to Networks",
+];
+
+if (new URLSearchParams(location.search).has("show")) {
+  document.getElementById("contact-number").hidden = false;
+}
 
 function copyPhoneNumber() {
   const phoneNumber = "+96178817895";
@@ -109,42 +124,57 @@ function copyPhoneNumber() {
 }
 
 function renderCertificates() {
-  certificatesList.innerHTML = "";
+  const all = Object.entries(certificatesByOrg).flatMap(([org, certs]) =>
+    certs.map((cert) => ({ ...cert, org }))
+  );
+  const rank = (cert) => {
+    const i = featuredCertificates.indexOf(cert.name);
+    return i === -1 ? featuredCertificates.length : i;
+  };
+  all.sort((a, b) => rank(a) - rank(b));
 
-  for (const [org, certs] of Object.entries(certificatesByOrg)) {
-    const orgTitle = document.createElement("h3");
-    orgTitle.textContent = org;
-    orgTitle.classList.add("cert-org-title");
-    certificatesList.appendChild(orgTitle);
+  all.forEach((cert, index) => {
+    const card = document.createElement("a");
+    card.className = "cert-card";
+    card.href = cert.url;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+    if (index >= INITIAL_CERTIFICATES) card.classList.add("cert-extra");
 
-    const ul = document.createElement("ul");
-    ul.classList.add("cert-org-list");
-    certs.forEach((cert) => {
-      const li = document.createElement("li");
-      const link = document.createElement("a");
-      link.textContent = cert.name;
-      link.href = cert.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.classList.add("cert-link");
-      li.appendChild(link);
-      ul.appendChild(li);
-    });
+    const icon = document.createElement("i");
+    icon.className = "fas fa-certificate cert-icon";
 
-    certificatesList.appendChild(ul);
-  }
+    const info = document.createElement("div");
+    info.className = "cert-info";
+    const org = document.createElement("span");
+    org.className = "cert-org";
+    org.textContent = cert.org;
+    const name = document.createElement("span");
+    name.className = "cert-name";
+    name.textContent = cert.name;
+    info.append(org, name);
+
+    const arrow = document.createElement("i");
+    arrow.className = "fas fa-arrow-up-right-from-square cert-arrow";
+
+    card.append(icon, info, arrow);
+    certificatesGrid.appendChild(card);
+  });
+
+  const hiddenCount = all.length - INITIAL_CERTIFICATES;
+  let expanded = false;
+  toggleBtn.textContent = `Show all ${all.length} certificates`;
+  toggleBtn.addEventListener("click", () => {
+    expanded = !expanded;
+    certificatesGrid.classList.toggle("expanded", expanded);
+    toggleBtn.textContent = expanded
+      ? "Show fewer"
+      : `Show all ${all.length} certificates`;
+  });
+  toggleBtn.hidden = hiddenCount <= 0;
 }
 
-toggleBtn.addEventListener("click", () => {
-  if (certificatesList.style.display === "none") {
-    renderCertificates();
-    certificatesList.style.display = "block";
-    toggleBtn.textContent = "Hide My Certificates";
-  } else {
-    certificatesList.style.display = "none";
-    toggleBtn.textContent = "Show My Certificates";
-  }
-});
+renderCertificates();
 
 const animateOnScroll = () => {
   const elements = document.querySelectorAll(

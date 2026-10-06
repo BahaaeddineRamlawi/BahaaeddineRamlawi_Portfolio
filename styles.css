@@ -215,74 +215,117 @@ section:hover {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.cv-download {
-  text-align: center;
-  margin-bottom: 40px;
-  padding: 25px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cv-download:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
 .cv-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 15px 30px;
-  background-color: var(--primary-color);
-  color: white;
+  margin-top: 20px;
+  padding: 12px 26px;
+  background-color: white;
+  color: var(--secondary-color);
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 2px solid white;
 }
 
 .cv-button:hover {
-  background-color: white;
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: transparent;
+  color: white;
   transform: translateY(-3px);
 }
 
-.cv-note {
-  margin-top: 15px;
-  color: var(--text-light);
-  font-size: 0.9rem;
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 14px;
+  margin-top: 10px;
 }
 
-.certificates-list {
-  margin-top: 20px;
-  list-style: none;
-  padding-left: 0;
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--light-color);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  border: 1px solid #eee;
+  border-left: 4px solid var(--primary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.certificates-list li {
-  margin: 10px 0;
-  font-weight: 600;
+.cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-.certificates-list li a {
-  cursor: pointer;
+.cert-icon {
+  font-size: 1.4rem;
   color: var(--primary-color);
-  text-decoration: underline;
-  transition: color 0.3s ease;
+}
+
+.cert-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.cert-arrow {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.cert-card:hover .cert-arrow {
+  color: var(--primary-color);
+}
+
+.cert-org {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary-color);
+}
+
+.cert-name {
+  font-size: 0.95rem;
   font-weight: 600;
+  line-height: 1.3;
 }
 
-.certificates-list li a:hover {
-  color: var(--accent-color);
+.cert-extra {
+  display: none;
 }
 
-.cert-org-list {
-  margin-left: 20px;
+.cert-grid.expanded .cert-extra {
+  display: flex;
+}
+
+.btn-outline {
+  display: block;
+  margin: 25px auto 0;
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
 footer {
@@ -446,4 +489,40 @@ footer {
   .social-link {
     padding: 12px 15px;
   }
+}
+
+/* Experience Section */
+.experience-item {
+  padding: 0 0 20px 20px;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px 15px;
+}
+
+.experience-header h3 {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.experience-date {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.experience-company {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 4px 0 8px;
 }
